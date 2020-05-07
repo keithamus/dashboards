@@ -1249,14 +1249,14 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum by (name) (rate(unifipoller_client_transmit_bytes_total{name!~\".*camera.*|.*cam(era)?$\", name=~\"$Wireless\", site_name=~\"$Site\", ap_name=~\"$AP\"}[$__interval]))",
+          "expr": "sum by (name) (rate(unifipoller_client_transmit_bytes_total{name!~\"(?:i(.*camera.*|.*cam(era)?))$\", name=~\"$Wireless\", site_name=~\"$Site\", ap_name=~\"$AP\"}[$__interval]))",
           "instant": false,
           "interval": "$Smooth",
           "legendFormat": "{{name}} Tx",
           "refId": "B"
         },
         {
-          "expr": "sum by (name) (rate(unifipoller_client_receive_bytes_total{name!~\".*camera.*|.*cam(era)?$\", name=~\"$Wireless\", site_name=~\"$Site\", ap_name=~\"$AP\"}[$__interval]))",
+          "expr": "sum by (name) (rate(unifipoller_client_receive_bytes_total{name!~\"(?:i(.*camera.*|.*cam(era)?))$\", name=~\"$Wireless\", site_name=~\"$Site\", ap_name=~\"$AP\"}[$__interval]))",
           "instant": false,
           "interval": "$Smooth",
           "legendFormat": "{{name}} Rx",
@@ -1357,13 +1357,13 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum by (name) (rate(unifipoller_client_transmit_bytes_total{name!~\".*camera.*|.*cam(era)?$\", name=~\"$Wired\", site_name=~\"$Site\", sw_name=~\"$Switch\"}[$__interval]))",
+          "expr": "sum by (name) (rate(unifipoller_client_transmit_bytes_total{name!~\"(?:i(.*camera.*|.*cam(era)))?$\", name=~\"$Wired\", site_name=~\"$Site\", sw_name=~\"$Switch\"}[$__interval]))",
           "interval": "$Smooth",
           "legendFormat": "{{name}} Tx",
           "refId": "A"
         },
         {
-          "expr": "sum by (name) (rate(unifipoller_client_receive_bytes_total{name!~\".*camera.*|.*cam(era)?$\", name=~\"$Wired\", site_name=~\"$Site\", sw_name=~\"$Switch\"}[$__interval]))",
+          "expr": "sum by (name) (rate(unifipoller_client_receive_bytes_total{name!~\"(?:i(.*camera.*|.*cam(era)))?$\", name=~\"$Wired\", site_name=~\"$Site\", sw_name=~\"$Switch\"}[$__interval]))",
           "hide": false,
           "interval": "$Smooth",
           "intervalFactor": 1,
@@ -1587,7 +1587,7 @@
       "steppedLine": false,
       "targets": [
         {
-          "expr": "sum by (name) (rate(unifipoller_client_transmit_bytes_total{ap_name=~\"$AP\", name=~\".*camera.*|.*cam$\", site_name=~\"$Site\"}[$__interval]))",
+          "expr": "sum by (name) (rate(unifipoller_client_transmit_bytes_total{ap_name=~\"$AP\", name=~\"(?:i(.*camera.*|.*cam))$\", site_name=~\"$Site\"}[$__interval]))",
           "hide": false,
           "instant": false,
           "interval": "$Smooth",
@@ -1595,21 +1595,21 @@
           "refId": "A"
         },
         {
-          "expr": "sum by (name) (rate(unifipoller_client_receive_bytes_total{ap_name=~\"$AP\", name=~\".*camera.*|.*cam$\", site_name=~\"$Site\"}[$__interval]))",
+          "expr": "sum by (name) (rate(unifipoller_client_receive_bytes_total{ap_name=~\"$AP\", name=~\"(?:i(.*camera.*|.*cam))$\", site_name=~\"$Site\"}[$__interval]))",
           "hide": false,
           "interval": "$Smooth",
           "legendFormat": "w {{name}} Rx",
           "refId": "B"
         },
         {
-          "expr": "sum by (name) (rate(unifipoller_client_transmit_bytes_total{sw_name=~\"$Switch\", name=~\".*camera.*|.*cam$\", site_name=~\"$Site\"}[$__interval]))",
+          "expr": "sum by (name) (rate(unifipoller_client_transmit_bytes_total{sw_name=~\"$Switch\", name=~\"(?:i(.*camera.*|.*cam))$\", site_name=~\"$Site\"}[$__interval]))",
           "hide": false,
           "interval": "$Smooth",
           "legendFormat": "e {{name}} Tx",
           "refId": "C"
         },
         {
-          "expr": "sum by (name) (rate(unifipoller_client_receive_bytes_total{sw_name=~\"$Switch\", name=~\".*camera.*|.*cam$\", site_name=~\"$Site\"}[$__interval]))",
+          "expr": "sum by (name) (rate(unifipoller_client_receive_bytes_total{sw_name=~\"$Switch\", name=~\"(?:i(.*camera.*|.*cam))$\", site_name=~\"$Site\"}[$__interval]))",
           "hide": false,
           "interval": "$Smooth",
           "legendFormat": "e {{name}} Rx",
